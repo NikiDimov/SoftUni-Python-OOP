@@ -1,0 +1,13 @@
+class Guitar:
+    def play(self):
+        return "Playing the guitar"
+
+
+guitar = Guitar()
+
+
+def start_playing(instance):
+    return instance.play()
+
+
+print(start_playing(guitar))
