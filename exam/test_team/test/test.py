@@ -34,8 +34,15 @@ class TestTeam(TestCase):
     def test_greater_than_method_true(self):
         self.team.add_member(pesho=18, toshko=20)
         new_team = Team("Stars")
-        self.assertTrue(self.team > new_team)
-        self.assertFalse(self.team < new_team)
+        actual = self.team > new_team
+        self.assertEqual(True, actual)
+
+    def test_greater_than_method_false(self):
+        new_team = Team("Stars")
+        new_team.add_member(pesho=18, toshko=20)
+        actual = self.team > new_team
+        self.assertEqual(False, actual)
+
 
     def test_len_method(self):
         self.team.add_member(pesho=18, toshko=20)
